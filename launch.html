@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="An easy way to generate and run application & services">
+    <meta name="author" content="Sign up for free demo">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>App Gen Service</title>
     <!-- Bootstrap core CSS -->
-    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -28,6 +28,25 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
+    <script>
+
+      var count = 1;
+      function showProgress() {
+        var percentage = count++ * 5;
+        console.log(percentage+"%");
+        if(percentage <= 100) {
+          if(document.getElementById("progress")) {
+            document.getElementById("progress").style.width = percentage+"%";
+              document.getElementById("progress").innerHTML = percentage+"%";
+          }
+          setTimeout(function(){
+            showProgress();
+          }, 1000);
+        }
+      }
+      showProgress();
+
+    </script>
   </head>
   <body>
     <header>
@@ -62,10 +81,12 @@
   </div>
 </header>
 <main role="main" class="container">
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-6">What is App Gen Service ?</h1>
-  <p class="lead">An easy to use platform for buiding web applications without much expertise</p>
-   <a class="btn btn-outline-primary" href="signup.html">Launch App</a>
+<div class="pricing-header px-5 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+<div class="container">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 10%" id="progress">5%</div>
+  </div>
+</div>
 </div>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
