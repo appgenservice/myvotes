@@ -41,6 +41,7 @@
               xhr.send({});
               xhr.onload = function() {
                 console.log(this.responseText);
+                window.location.href = "launch.html";
               }
             }
         }
