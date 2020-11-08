@@ -8,7 +8,7 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>App Gen Service</title>
     <!-- Bootstrap core CSS -->
-<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -28,6 +28,24 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
+    <script>
+      function createApp() {
+        if(document.getElementById("email") && document.getElementById("appName")) {
+            var email = document.getElementById("email").value;
+            var appName = document.getElementById("appName").value;
+            if(email && appName){
+              var requestString = encodeURI("http://localhost:8080/app?appName="+appName+"&email="+email);
+              console.log(requestString);
+              var xhr = new XMLHttpRequest();
+              xhr.open("POST", requestString, true);
+              xhr.send({});
+              xhr.onload = function() {
+                console.log(this.responseText);
+              }
+            }
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -62,30 +80,22 @@
   </div>
 </header>
 <main role="main" class="container">
-<div class="pricing-header px-5 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-<div class="container">
-        <form class="card p-2">
-         <div class="input-group">
-           <input type="text" class="form-control" placeholder="Your email address (will send password)">
-           <div class="input-group-append">
-             <a type="submit" class="btn btn-secondary" href="launch.html">Next</a>
-           </div>
-         </div>
-       </form>
-</div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-6">What is it now ?</h1>
+  <p class="lead">We will launch your new application now and send details in your email address</p>
 </div>
 </main>
+  <body class="text-center">
+    <form class="form-signin">
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="input" id="appName" class="form-control" placeholder="Application Name" required>
+  <a class="btn btn-lg btn-primary btn-block" type="submit" onClick="createApp();" href="#">Launch</a>
+  <p class="mt-5 mb-3 text-muted"></p>
+</form>
+</body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3NYKL17S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9F3NYKL17S');
-</script>
 
 </html>
