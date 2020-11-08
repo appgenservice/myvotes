@@ -34,7 +34,7 @@
             var email = document.getElementById("email").value;
             var appName = document.getElementById("appName").value;
             if(email && appName){
-              var requestString = encodeURI("http://appgenservice:9015/app?appName="+appName+"&email="+email);
+              var requestString = encodeURI("http://appgenservice.com:9015/app?appName="+appName+"&email="+email);
               console.log(requestString);
               var xhr = new XMLHttpRequest();
               xhr.open("POST", requestString, true);
