@@ -36,7 +36,7 @@
               var url = document.getElementById("url").value;
               const dataToSend = JSON.stringify({"email": email, "appName": appName, "url": url});
               if(email && appName){
-                var requestString = encodeURI("http://appgenservice.com:9015/app");
+                var requestString = encodeURI("http://appgenservice.com:8086/app");
                 console.log(requestString);
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", requestString, true);
